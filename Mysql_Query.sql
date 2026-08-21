@@ -155,3 +155,24 @@ select substring(student_name,1,3) from student;
 
 -- Query - 23
 select distinct city, Length(city) from student;
+
+-- Query - 24
+select course_id, count(*)
+from student 
+group by course_id
+having count(course_id) > 1;
+
+-- Query - 25
+-- 2nd Max Marks and student name
+-- METHOD - 1 
+select student_name, marks 
+from student
+order by marks desc
+limit 1
+offset 1;
+
+-- METHOD -2 
+select max(marks) 
+from student 
+where marks < 
+(select max(marks) from student);
