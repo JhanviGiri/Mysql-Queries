@@ -140,9 +140,18 @@ from student;
 
 -- Query - 19
 create index idx_city on student (city);
-
+show index from student;
 
 -- Query - 20 
+create index idx_marks on student(marks);
+show index from student;
 
+-- Query - 21
+create index idx_courseId_marks on student(course_id, marks);
+show index from student;
 
+-- Query - 22
+select substring(student_name,1,3) from student;
 
+-- Query - 23
+select distinct city, Length(city) from student;
