@@ -45,6 +45,7 @@ select * from student;
 select * from course;
 
 -- JOINS
+
 -- Query - 1
 select course.course_id, course.course_name, student.student_name
 from course
@@ -59,8 +60,31 @@ on s.course_id = c.course_id
 where c.course_name = 'Java';
 
 -- Query - 3
+select s.student_name, s.marks, c.course_name,c.course_id
+from student as s
+inner join course as c
+on s.course_id = c.course_id
+where s.marks > 85;
+
+-- Query - 4
+select s.student_name, s.marks, c.course_name
+from student as s
+inner join course as c
+on s.course_id = c.course_id
+order by c.course_name asc, 
+s.marks desc;
+
+-- Query - 5
+select c.course_id, count(s.student_id)
+from student as s
+left join course as c
+on s.course_id = c.course_id
+group by c.course_id;
+
+
 
 -- SubQueries
+
 -- Query - 6
 select student_name,marks from student
 where marks > 
