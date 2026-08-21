@@ -51,6 +51,15 @@ from course
 inner join student
 on course.course_id = student.course_id;
 
+-- Query - 2
+select s.student_name, s.marks, c.course_name
+from student as s
+inner join course as c
+on s.course_id = c.course_id
+where c.course_name = 'Java';
+
+-- Query - 3
+
 -- SubQueries
 -- Query - 6
 select student_name,marks from student
